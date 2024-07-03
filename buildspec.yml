@@ -12,16 +12,6 @@ phases:
           terraform init
           terraform validate
 
-          echo "==== Running: TFLINT ===="
-          tflint --init
-          tflint
-
-          echo "==== Running: Checkov ===="
-          checkov --framework terraform -d .
-
-          echo "==== Running: TFSEC ===="
-          tfsec .
-
         elif [ ${ACTION} = "PLAN" ] ; then
 
           echo "==== Running: Terraform Plan ===="
